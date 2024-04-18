@@ -13,10 +13,11 @@ public class PoemServer {
     }
     public void start() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server Connected");
+            System.out.println("Server is listening on port " + port);
             boolean isRunning = true;
             while (isRunning) {
                 Socket clientSocket = serverSocket.accept();
+                System.out.println("Server Connected");
                 if (clientSocket != null) {
                     handleClient(clientSocket);
                 } else {
@@ -32,14 +33,28 @@ public class PoemServer {
         try (var out = new PrintWriter(clientSocket.getOutputStream(), true);
              var in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
-            String poemLine;
-            int lineNumber = Integer.parseInt(in.readLine());
-            poemLine = getLineFromFile(filePath, lineNumber);
-            out.println(poemLine);
+            String userInput;
+            while ((userInput = in.readLine()) !=null) {
+                if (userInput.equals("00")) {
+                    System.out.println("Client terminated the connection.");
+                    break;
+                }
+                int lineNumber = Integer.parseInt(userInput);
+                String poemLine = getLineFromFile(lineNumber);
+                out.println(poemLine);
+            }
+        } catch (IOException e) {
+            System.err.println("Error the server: " + e.getMessage());
+        } finally {
+            try {
+                clientSocket.close();
+            } catch (IOException e) {
+                System.err.println("Error closing the server: " + e.getMessage());
+            }
         }
     }
 
-    private String getLineFromFile(String filePath, int lineNumber) throws IOException {
+    private String getLineFromFile(int lineNumber) throws IOException {
         try (var reader = new BufferedReader(new FileReader(filePath))) {
             String poemLine;
             int currentLine = 0;
