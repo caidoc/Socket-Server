@@ -15,5 +15,28 @@ The Poem Client-Server project is a simple Java application that demonstrates cl
 
 ## Installation
   1. Clone the repository to your local machine:
-     > git clone
+    `git clone https://github.com/caidoc/ExerciseProject1`
+  2. Open the project in Intellij IDEA.
+  3. Compile the Java files.
+
+## Usage
+### Server
+  1. Run the **ServerDriver** class to start the server.
+     `java ServerDriver`
+  2. The server will start listening on the specified port.
+
+### Client
+  1. Run the **ClientDriver** class to start the client.
+     `java ClientDriver`
+  2. Enter a line number to request a specific line from the poem. Enter **00** to terminate the connection.
+
+## Configuration
+  - Modify the **filePath** to change the poem that the server responds with.
+  - Update the server **port** in the PoemServer class if needed.
+
+## Acknowledgements
+  - A Guide to Java Sockets
+  - Read an InputStream using the Java Server Socket
+  - How to Read a File in Java
+  - Read and Write User Input in Java
      
