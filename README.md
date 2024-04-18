@@ -34,9 +34,9 @@ The Poem Client-Server project is a simple Java application that demonstrates cl
   - Modify the **filePath** to change the poem that the server responds with.
   - Update the server **port** in the PoemServer class if needed.
 
-## Acknowledgements
-  - A Guide to Java Sockets
-  - Read an InputStream using the Java Server Socket
-  - How to Read a File in Java
-  - Read and Write User Input in Java
+## Reference
+  - [A Guide to Java Sockets](https://www.baeldung.com/a-guide-to-java-sockets)
+  - [Read an InputStream using the Java Server Socket](https://www.baeldung.com/java-inputstream-server-socket)
+  - [How to Read a File in Java](https://www.baeldung.com/reading-file-in-java)
+  - [Read and Write User Input in Java](https://www.baeldung.com/java-console-input-output)
      
