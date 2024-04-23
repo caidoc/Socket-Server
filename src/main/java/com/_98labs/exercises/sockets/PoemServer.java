@@ -1,4 +1,7 @@
-package poemclientserver;
+package com._98labs.exercises.sockets;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -7,17 +10,19 @@ import java.net.Socket;
 public class PoemServer {
     private final String filePath;
     private final int port;
+    private boolean isRunning;
+    private final Logger logger = LogManager.getLogger(PoemServer.class);
     public PoemServer(String filePath, int port) {
         this.filePath = filePath;
         this.port = port;
+        this.isRunning = true;
     }
     public void start() {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            System.out.println("Server is listening on port " + port);
-            boolean isRunning = true;
+            logger.info("Server is listening on port " + port);
             while (isRunning) {
                 Socket clientSocket = serverSocket.accept();
-                System.out.println("Server Connected");
+                logger.info("Server Connected");
                 if (clientSocket != null) {
                     handleClient(clientSocket);
                 } else {
@@ -25,7 +30,7 @@ public class PoemServer {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error starting the server: " + e.getMessage());
+            logger.error("Error starting the server: " + e.getMessage());
         }
     }
 
@@ -36,20 +41,25 @@ public class PoemServer {
             String userInput;
             while ((userInput = in.readLine()) !=null) {
                 if (userInput.equals("00")) {
-                    System.out.println("Client terminated the connection.");
+                    logger.info("Client terminated the connection.");
+                    isRunning = false;
                     break;
                 }
-                int lineNumber = Integer.parseInt(userInput);
-                String poemLine = getLineFromFile(lineNumber);
-                out.println(poemLine);
+                try {
+                    int lineNumber = Integer.parseInt(userInput);
+                    String poemLine = getLineFromFile(lineNumber);
+                    out.println(poemLine);
+                } catch (NumberFormatException e) {
+                    out.println("Send only Integer Number");
+                }
             }
         } catch (IOException e) {
-            System.err.println("Error the server: " + e.getMessage());
+            logger.error("Error the server: " + e.getMessage());
         } finally {
             try {
                 clientSocket.close();
             } catch (IOException e) {
-                System.err.println("Error closing the server: " + e.getMessage());
+                logger.error("Error closing the server: " + e.getMessage());
             }
         }
     }
