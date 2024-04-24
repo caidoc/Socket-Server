@@ -23,6 +23,16 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
+        try {
+            handleClientRequest();
+        } catch (IOException e) {
+            serverLogger.error("Error handling client request: " + e.getMessage());
+        } finally {
+            closeClientSocket();
+        }
+    }
+
+    private void handleClientRequest() throws IOException {
         try (PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
@@ -30,26 +40,43 @@ public class ClientHandler implements Runnable {
             while ((userInput = in.readLine()) != null) {
                 serverLogger.info("Received request from client: {}", userInput);
                 if (userInput.equals("00")) {
-                    serverLogger.info("Client terminated the connection.");
-                    server.stop();
+                    handleClientTermination();
                     break;
                 }
-                try {
-                    int lineNumber = Integer.parseInt(userInput);
-                    String poemLine = poemReader.getLine(lineNumber);
-                    out.println(poemLine);
-                } catch (NumberFormatException e) {
-                    out.println("Send only Integer Number");
-                }
+                handleUserInput(userInput, out);
             }
+        }
+    }
+
+    private void handleClientTermination() {
+        serverLogger.info("Client terminated the connection.");
+        server.stop();
+    }
+
+    public void handleUserInput(String userInput, PrintWriter out) throws IOException {
+        if (isValidInput(userInput)) {
+            int lineNumber = Integer.parseInt(userInput);
+            String poemLine = poemReader.getLine(lineNumber);
+            out.println(poemLine);
+        } else {
+            out.println("Send only Integer Number");
+        }
+    }
+
+    public boolean isValidInput(String userInput) {
+        try {
+            Integer.parseInt(userInput);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private void closeClientSocket() {
+        try {
+            clientSocket.close();
         } catch (IOException e) {
-            serverLogger.error("Error handling client request: " + e.getMessage());
-        } finally {
-            try {
-                clientSocket.close();
-            } catch (IOException e) {
-                serverLogger.error("Error closing client socket: " + e.getMessage());
-            }
+            serverLogger.error("Error closing client socket: " + e.getMessage());
         }
     }
 }

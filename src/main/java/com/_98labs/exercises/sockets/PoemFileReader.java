@@ -14,13 +14,17 @@ public class PoemFileReader implements PoemReader {
     @Override
     public String getLine(int lineNumber) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String poemLine;
-            int currentLine = 0;
-            while ((poemLine = reader.readLine()) != null) {
-                currentLine++;
-                if (currentLine == lineNumber) {
-                    return poemLine;
-                }
+            return readLineFromFile(reader, lineNumber);
+        }
+    }
+
+    private String readLineFromFile(BufferedReader reader, int lineNumber) throws IOException {
+        String poemLine;
+        int currentLine = 0;
+        while ((poemLine = reader.readLine()) != null) {
+            currentLine++;
+            if (currentLine == lineNumber) {
+                return poemLine;
             }
         }
         return "Line not found";

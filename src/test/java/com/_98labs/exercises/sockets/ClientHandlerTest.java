@@ -1,80 +1,90 @@
 package com._98labs.exercises.sockets;
-import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-public class ClientHandlerTest {
-    private ServerSocket serverSocket;
-    private Thread serverThread;
-    private int port;
-    private ClientHandler clientHandler;
+class ClientHandlerTest {
+
+    @Mock
+    private Socket mockClientSocket;
+
+    @Mock
+    private PoemReader mockPoemReader;
+
+    @Mock
+    private Server mockServer;
 
     @BeforeEach
-    void setup() throws IOException {
-        serverSocket = new ServerSocket(12345);
-        port = serverSocket.getLocalPort();
-        serverThread = new Thread(() -> {
-            try {
-                Socket clientSocket = serverSocket.accept();
-                PoemReader poemReader = new PoemReader() {
-                    @Override
-                    public String getLine(int lineNumber) throws IOException {
-                        return null;
-                    }
-                }; // You need to implement this class according to your requirements
-                Server server = new Server(); // You need to implement this class according to your requirements
-                clientHandler = new ClientHandler(clientSocket, poemReader, server);
-                clientHandler.run();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-        serverThread.start();
-    }
-
-    @AfterEach
-    void tearDown() throws IOException {
-        serverSocket.close();
-        clientHandler = null;
-        serverThread.interrupt();
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    void testClientHandlerWithValidInput() throws IOException {
-        Socket socket = new Socket("localhost", port);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+    void handleUserInput_ValidInput_ShouldSendPoemLine() throws IOException {
+        // Arrange
+        String userInput = "3";
+        String expectedPoemLine = "Third line of poem";
+        PrintWriter mockPrintWriter = mock(PrintWriter.class);
+        when(mockPoemReader.getLine(3)).thenReturn(expectedPoemLine);
+        ClientHandler clientHandler = new ClientHandler(mockClientSocket, mockPoemReader, mockServer);
 
-        writer.println("1");
-        String response = reader.readLine();
-        assertEquals("First line of the poem", response);
+        // Act
+        clientHandler.handleUserInput(userInput, mockPrintWriter);
+
+        // Assert
+        verify(mockPoemReader).getLine(3);
+        verify(mockPrintWriter).println(expectedPoemLine);
     }
 
     @Test
-    void testClientHandlerWithInvalidInput() throws IOException {
-        Socket socket = new Socket("localhost", port);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+    void handleUserInput_InvalidInput_ShouldSendErrorMessage() {
+        // Arrange
+        String userInput = "abc";
+        PrintWriter mockPrintWriter = mock(PrintWriter.class);
+        ClientHandler clientHandler = new ClientHandler(mockClientSocket, mockPoemReader, mockServer);
 
-        writer.println("abc");
-        String response = reader.readLine();
-        assertEquals("Send only Integer Number", response);
+        // Act
+        try {
+            clientHandler.handleUserInput(userInput, mockPrintWriter);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        // Assert
+        verify(mockPrintWriter).println("Send only Integer Number");
     }
 
     @Test
-    void testClientHandlerWithClientTerminatingConnection() throws IOException {
-        Socket socket = new Socket("localhost", port);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+    void isValidInput_ValidInput_ShouldReturnTrue() {
+        // Arrange
+        String userInput = "123";
+        ClientHandler clientHandler = new ClientHandler(mockClientSocket, mockPoemReader, mockServer);
 
-        writer.println("00");
-        assertTrue(socket.isClosed());
+        // Act
+        boolean isValid = clientHandler.isValidInput(userInput);
+
+        // Assert
+        assertTrue(isValid);
+    }
+
+    @Test
+    void isValidInput_InvalidInput_ShouldReturnFalse() {
+        // Arrange
+        String userInput = "abc";
+        ClientHandler clientHandler = new ClientHandler(mockClientSocket, mockPoemReader, mockServer);
+
+        // Act
+        boolean isValid = clientHandler.isValidInput(userInput);
+
+        // Assert
+        assertFalse(isValid);
     }
 }

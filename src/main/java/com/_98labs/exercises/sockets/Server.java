@@ -8,29 +8,30 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-    private static final Logger serverLogger = LogManager.getLogger(Server.class);
-    private PoemReader poemReader = null;
-    private boolean isRunning = true;
+    private static final Logger logger = LogManager.getLogger(Server.class);
+    private final int port;
+    private final PoemReader poemReader;
+    private volatile boolean isRunning;
 
-    public Server(PoemReader poemReader) {
+    public Server(int port, PoemReader poemReader) {
+        this.port = port;
         this.poemReader = poemReader;
+        this.isRunning = false;
     }
 
-    public Server() {
-    }
-
-    public void start(int port) {
+    public void start() {
+        isRunning = true;
         try (ServerSocket serverSocket = new ServerSocket(port)) {
-            serverLogger.info("Server is listening on port " + port);
+            logger.info("Server is listening on port {}", port);
 
             while (isRunning) {
                 Socket clientSocket = serverSocket.accept();
-                serverLogger.info("Server Connected");
-                ClientHandler clientHandler = new ClientHandler(clientSocket, poemReader, this);
+                logger.info("Server connected");
+                ClientHandler clientHandler = new ClientHandler(clientSocket, poemReader);
                 new Thread(clientHandler).start();
             }
         } catch (IOException e) {
-            serverLogger.error("Error starting the server: " + e.getMessage());
+            logger.error("Error starting the server: {}", e.getMessage());
         }
     }
 
@@ -40,12 +41,13 @@ public class Server {
 
     public static void main(String[] args) {
         int port = 12345;
-        PoemReader poemReader = new PoemFileReader("C:\\Users\\Lenovo\\IdeaProjects\\ExerciseProject1\\src\\main\\resources\\Still I Rise.txt");
-        Server server = new Server(poemReader);
-        server.start(port);
+        String filePath = "C:\\Users\\Lenovo\\IdeaProjects\\ExerciseProject1\\src\\main\\resources\\Still I Rise.txt";
+        PoemReader poemReader = new PoemFileReader(filePath);
+        Server server = new Server(port, poemReader);
+        server.start();
     }
 
     public boolean isRunning() {
-        return false;
+        return isRunning;
     }
 }
