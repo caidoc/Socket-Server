@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8a826b9-f521-4fee-98a5-c01338a0a9d1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ClientHandlerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ServerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poemclientserver/ClientDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poemclientserver/PoemClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poemclientserver/PoemServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/poemclientserver/ServerDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/ClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -51,37 +55,58 @@
     "Application.Main.executor": "Run",
     "Application.Server.executor": "Run",
     "Application.ServerDriver.executor": "Run",
+    "JUnit.PoemFileReaderTest.executor": "Run",
+    "JUnit.ServerTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "fix/update-1",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "fix/update-2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/poemclientserver",
     "onboarding.tips.debug.path": "C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com._98labs.exercises.sockets" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Lenovo\IdeaProjects\ExerciseProject1\src\main\java\poemclientserver" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com._98labs.exercises.sockets" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="ServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Socket-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com._98labs.exercises.sockets.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
+      <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.ServerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Socket-Server" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ServerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
