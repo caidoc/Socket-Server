@@ -1,9 +1,1 @@
-2024-04-23 22:58:31.836 [main] INFO  com._98labs.exercises.sockets.Server - Server is listening on port 12345
-2024-04-23 22:58:49.007 [main] INFO  com._98labs.exercises.sockets.Server - Server Connected
-2024-04-23 22:58:49.040 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
-2024-04-23 22:58:49.044 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 00
-2024-04-23 22:58:49.044 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Client terminated the connection.
-2024-04-23 23:04:44.904 [main] INFO  com._98labs.exercises.sockets.Server - Server Connected
-2024-04-23 23:04:44.932 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
-2024-04-23 23:04:44.937 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 00
-2024-04-23 23:04:44.937 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Client terminated the connection.
+2024-04-24 22:14:56.632 [main] INFO  com._98labs.exercises.sockets.Server - Server is listening on port 12345
