@@ -7,12 +7,10 @@
     <list default="true" id="d8a826b9-f521-4fee-98a5-c01338a0a9d1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemFileReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ClientHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ClientHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ServerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +52,21 @@
     "Application.Server.executor": "Run",
     "Application.ServerDriver.executor": "Run",
     "JUnit.ClientHandlerTest.executor": "Run",
+    "JUnit.ClientHandlerTest.handleUserInput_InvalidInput_ReturnsErrorMessage.executor": "Run",
+    "JUnit.ClientHandlerTest.handleUserInput_ValidInput_ShouldSendPoemLine.executor": "Run",
+    "JUnit.ClientHandlerTest.isValidInput_InvalidInput_ShouldReturnFalse.executor": "Run",
     "JUnit.ClientHandlerTest.testClientHandlerWithClientTerminatingConnection.executor": "Run",
     "JUnit.PoemFileReaderTest.executor": "Run",
     "JUnit.PoemFileReaderTest.testGetLine.executor": "Run",
     "JUnit.PoemFileReaderTest.testGetLineFromFile.executor": "Run",
     "JUnit.ServerTest.executor": "Run",
+    "JUnit.ServerTest.testServerStartAndStop.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "fix/update-3",
+    "git-widget-placeholder": "fix/update-4",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/poemclientserver",
     "onboarding.tips.debug.path": "C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/org/example/Main.java",
@@ -88,7 +90,7 @@
       <recent name="com._98labs.exercises.sockets" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServerTest">
+  <component name="RunManager">
     <configuration name="ClientHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Socket-Server" />
       <extension name="coverage">
@@ -100,6 +102,38 @@
       <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
       <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.ClientHandlerTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientHandlerTest.handleUserInput_InvalidInput_ReturnsErrorMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Socket-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com._98labs.exercises.sockets.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
+      <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.ClientHandlerTest" />
+      <option name="METHOD_NAME" value="handleUserInput_InvalidInput_ReturnsErrorMessage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientHandlerTest.handleUserInput_ValidInput_ShouldSendPoemLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Socket-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com._98labs.exercises.sockets.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
+      <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.ClientHandlerTest" />
+      <option name="METHOD_NAME" value="handleUserInput_ValidInput_ShouldSendPoemLine" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -119,39 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoemFileReaderTest.testGetLine" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Socket-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com._98labs.exercises.sockets.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
-      <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.PoemFileReaderTest" />
-      <option name="METHOD_NAME" value="testGetLine" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PoemFileReaderTest.testGetLineFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Socket-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com._98labs.exercises.sockets.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
-      <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.PoemFileReaderTest" />
-      <option name="METHOD_NAME" value="testGetLineFromFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerTest.testServerStartAndStop" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Socket-Server" />
       <extension name="coverage">
         <pattern>
@@ -161,18 +163,19 @@
       </extension>
       <option name="PACKAGE_NAME" value="com._98labs.exercises.sockets" />
       <option name="MAIN_CLASS_NAME" value="com._98labs.exercises.sockets.ServerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testServerStartAndStop" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServerTest" />
-        <item itemvalue="JUnit.PoemFileReaderTest.testGetLine" />
-        <item itemvalue="JUnit.PoemFileReaderTest" />
-        <item itemvalue="JUnit.PoemFileReaderTest.testGetLineFromFile" />
+        <item itemvalue="JUnit.ClientHandlerTest.handleUserInput_ValidInput_ShouldSendPoemLine" />
         <item itemvalue="JUnit.ClientHandlerTest" />
+        <item itemvalue="JUnit.ClientHandlerTest.handleUserInput_InvalidInput_ReturnsErrorMessage" />
+        <item itemvalue="JUnit.PoemFileReaderTest" />
+        <item itemvalue="JUnit.ServerTest.testServerStartAndStop" />
       </list>
     </recent_temporary>
   </component>

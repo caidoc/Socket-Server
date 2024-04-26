@@ -9,13 +9,15 @@ import java.net.Socket;
 
 public class Server {
     private static final Logger logger = LogManager.getLogger(Server.class);
+    private static ServerSocket serverSocket;
     private final int port;
     private final PoemReader poemReader;
     private volatile boolean isRunning;
 
-    public Server(int port, PoemReader poemReader) {
+    public Server(int port, PoemReader poemReader, ServerSocket serverSocket) {
         this.port = port;
         this.poemReader = poemReader;
+        this.serverSocket = serverSocket;
         this.isRunning = false;
     }
 
@@ -27,7 +29,7 @@ public class Server {
             while (isRunning) {
                 Socket clientSocket = serverSocket.accept();
                 logger.info("Server connected");
-                ClientHandler clientHandler = new ClientHandler(clientSocket, poemReader);
+                ClientHandler clientHandler = new ClientHandler(clientSocket, poemReader, this);
                 new Thread(clientHandler).start();
             }
         } catch (IOException e) {
@@ -43,7 +45,7 @@ public class Server {
         int port = 12345;
         String filePath = "C:\\Users\\Lenovo\\IdeaProjects\\ExerciseProject1\\src\\main\\resources\\Still I Rise.txt";
         PoemReader poemReader = new PoemFileReader(filePath);
-        Server server = new Server(port, poemReader);
+        Server server = new Server(port, poemReader, serverSocket);
         server.start();
     }
 
