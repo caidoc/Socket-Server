@@ -12,7 +12,7 @@ public class PoemFileReaderTest {
     @BeforeEach
     public void setUp() {
         // Initialize a PoemFileReader instance with a temporary file
-        poemFileReader = new PoemFileReader("C:\\Users\\Lenovo\\IdeaProjects\\ExerciseProject1\\src\\main\\resources\\Still I Rise.txt");
+        poemFileReader = new PoemFileReader("Still I Rise.txt");
     }
     @Test
     public void testGetLine() throws IOException {

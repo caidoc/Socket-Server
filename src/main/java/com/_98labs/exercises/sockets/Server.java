@@ -17,8 +17,8 @@ public class Server {
     public Server(int port, PoemReader poemReader, ServerSocket serverSocket) {
         this.port = port;
         this.poemReader = poemReader;
-        this.serverSocket = serverSocket;
         this.isRunning = false;
+        Server.serverSocket = serverSocket;
     }
 
     public void start() {
@@ -43,13 +43,9 @@ public class Server {
 
     public static void main(String[] args) {
         int port = 12345;
-        String filePath = "C:\\Users\\Lenovo\\IdeaProjects\\ExerciseProject1\\src\\main\\resources\\Still I Rise.txt";
+        String filePath = "Still I Rise.txt";
         PoemReader poemReader = new PoemFileReader(filePath);
         Server server = new Server(port, poemReader, serverSocket);
         server.start();
-    }
-
-    public boolean isRunning() {
-        return isRunning;
     }
 }

@@ -7,10 +7,10 @@
     <list default="true" id="d8a826b9-f521-4fee-98a5-c01338a0a9d1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/all.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/ClientHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ClientHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ClientHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/ServerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "fix/update-4",
+    "git-widget-placeholder": "fix/update-5",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/poemclientserver",
     "onboarding.tips.debug.path": "C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/org/example/Main.java",
@@ -90,7 +90,7 @@
       <recent name="com._98labs.exercises.sockets" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PoemFileReaderTest">
     <configuration name="ClientHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Socket-Server" />
       <extension name="coverage">
@@ -171,10 +171,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PoemFileReaderTest" />
         <item itemvalue="JUnit.ClientHandlerTest.handleUserInput_ValidInput_ShouldSendPoemLine" />
         <item itemvalue="JUnit.ClientHandlerTest" />
         <item itemvalue="JUnit.ClientHandlerTest.handleUserInput_InvalidInput_ReturnsErrorMessage" />
-        <item itemvalue="JUnit.PoemFileReaderTest" />
         <item itemvalue="JUnit.ServerTest.testServerStartAndStop" />
       </list>
     </recent_temporary>

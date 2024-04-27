@@ -65,8 +65,8 @@ public class ClientHandler implements Runnable {
 
     public boolean isValidInput(String userInput) {
         try {
-            Integer.parseInt(userInput);
-            return true;
+            int lineNumber = Integer.parseInt(userInput);
+            return lineNumber > 0;
         } catch (NumberFormatException e) {
             return false;
         }

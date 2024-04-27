@@ -88,7 +88,7 @@ class ClientHandlerTest {
     }
 
     @Test
-    void isValidInput_StringInput_ReturnsFalse() {
+    void isValidInput_NonNumericInput_ReturnsFalse() {
         // Arrange
         ClientHandler clientHandler = new ClientHandler(null, null, null);
         String invalidInput = "abc";
