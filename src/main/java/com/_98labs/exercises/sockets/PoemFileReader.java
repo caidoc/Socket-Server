@@ -1,19 +1,18 @@
 package com._98labs.exercises.sockets;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Properties;
 
 public class PoemFileReader implements PoemReader {
-    private final String filePath;
+    private final String loadFilePath;
 
-    public PoemFileReader(String filePath) {
-        this.filePath = filePath;
+    public PoemFileReader() {
+        this.loadFilePath = loadFilePath();
     }
 
     @Override
     public String getLine(int lineNumber) throws IOException {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(loadFilePath))) {
             return readLineFromFile(reader, lineNumber);
         }
     }
@@ -28,5 +27,20 @@ public class PoemFileReader implements PoemReader {
             }
         }
         return "Line not found";
+    }
+
+    private String loadFilePath() {
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("config.properties")) {
+            Properties properties = new Properties();
+            if (inputStream != null) {
+                properties.load(inputStream);
+                String relativePath = properties.getProperty("filePath");
+                return System.getProperty("user.dir") + relativePath;
+            } else {
+                throw new RuntimeException("config.properties file not found in classpath");
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Error loading config.properties: " + e.getMessage(), e);
+        }
     }
 }

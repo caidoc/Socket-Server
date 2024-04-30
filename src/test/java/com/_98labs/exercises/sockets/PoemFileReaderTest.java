@@ -12,7 +12,7 @@ public class PoemFileReaderTest {
     @BeforeEach
     public void setUp() {
         // Initialize a PoemFileReader instance with a temporary file
-        poemFileReader = new PoemFileReader("Still I Rise.txt");
+        poemFileReader = new PoemFileReader();
     }
     @Test
     public void testGetLine() throws IOException {
@@ -32,3 +32,4 @@ public class PoemFileReaderTest {
         assertEquals("Line not found", poemFileReader.getLine(0));
     }
 }
+

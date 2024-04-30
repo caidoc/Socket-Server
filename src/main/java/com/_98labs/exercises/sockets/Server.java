@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Properties;
 
 public class Server {
     private static final Logger logger = LogManager.getLogger(Server.class);
@@ -43,8 +44,8 @@ public class Server {
 
     public static void main(String[] args) {
         int port = 12345;
-        String filePath = "Still I Rise.txt";
-        PoemReader poemReader = new PoemFileReader(filePath);
+        //String filePath = (System.getProperty("user.dir")+"\\src\\main\\resources\\Still I Rise.txt");
+        PoemReader poemReader = new PoemFileReader();
         Server server = new Server(port, poemReader, serverSocket);
         server.start();
     }
