@@ -1,4 +1,0 @@
-2024-04-25 20:03:00.281 [main] INFO  com._98labs.exercises.sockets.Server - Server is listening on port 12345
-2024-04-25 20:03:16.167 [main] INFO  com._98labs.exercises.sockets.Server - Server connected
-2024-04-25 20:03:26.563 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
-2024-04-25 20:03:38.606 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 2

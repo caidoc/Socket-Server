@@ -4,8 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Properties;
 
 public class Server {
     private static final Logger logger = LogManager.getLogger(Server.class);
@@ -17,8 +19,8 @@ public class Server {
     public Server(int port, PoemReader poemReader, ServerSocket serverSocket) {
         this.port = port;
         this.poemReader = poemReader;
-        this.serverSocket = serverSocket;
         this.isRunning = false;
+        Server.serverSocket = serverSocket;
     }
 
     public void start() {
@@ -42,14 +44,18 @@ public class Server {
     }
 
     public static void main(String[] args) {
-        int port = 12345;
-        String filePath = "C:\\Users\\Lenovo\\IdeaProjects\\ExerciseProject1\\src\\main\\resources\\Still I Rise.txt";
-        PoemReader poemReader = new PoemFileReader(filePath);
+        Properties properties;
+        try (InputStream inputStream = Server.class.getClassLoader().getResourceAsStream("config.properties")) {
+            properties = new Properties();
+            properties.load(inputStream);
+        } catch (IOException e) {
+            logger.error("Error loading properties file: {}", e.getMessage());
+            return;
+        }
+        int port = Integer.parseInt(properties.getProperty("port"));
+
+        PoemReader poemReader = new PoemFileReader();
         Server server = new Server(port, poemReader, serverSocket);
         server.start();
-    }
-
-    public boolean isRunning() {
-        return isRunning;
     }
 }
