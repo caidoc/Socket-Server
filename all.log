@@ -1,0 +1,7 @@
+2024-05-02 19:38:24.839 [main] INFO  com._98labs.exercises.sockets.Server - Server is listening on port 12345
+2024-05-02 19:39:03.558 [main] INFO  com._98labs.exercises.sockets.Server - Server connected
+2024-05-02 19:39:06.859 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
+2024-05-02 19:39:08.751 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 2
+2024-05-02 19:40:01.742 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 26
+2024-05-02 19:40:05.302 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 27
+2024-05-02 19:40:10.421 [Thread-0] ERROR com._98labs.exercises.sockets.ClientHandler - Error handling client request: Connection reset

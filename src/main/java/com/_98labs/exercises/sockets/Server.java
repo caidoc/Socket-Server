@@ -19,7 +19,7 @@ public class Server {
     public Server(int port, PoemReader poemReader, ServerSocket serverSocket) {
         this.port = port;
         this.poemReader = poemReader;
-        this.isRunning = false;
+        this.isRunning = true;
         Server.serverSocket = serverSocket;
     }
 
