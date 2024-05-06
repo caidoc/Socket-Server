@@ -1,7 +1,22 @@
-2024-05-02 19:38:24.839 [main] INFO  com._98labs.exercises.sockets.Server - Server is listening on port 12345
-2024-05-02 19:39:03.558 [main] INFO  com._98labs.exercises.sockets.Server - Server connected
-2024-05-02 19:39:06.859 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
-2024-05-02 19:39:08.751 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 2
-2024-05-02 19:40:01.742 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 26
-2024-05-02 19:40:05.302 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 27
-2024-05-02 19:40:10.421 [Thread-0] ERROR com._98labs.exercises.sockets.ClientHandler - Error handling client request: Connection reset
+2024-05-06 19:03:31.755 [main] INFO  com._98labs.exercises.sockets.Server - Server is listening on port 12345
+2024-05-06 19:03:38.639 [main] INFO  com._98labs.exercises.sockets.Server - Server connected
+2024-05-06 19:03:41.349 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
+2024-05-06 19:03:43.104 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 2
+2024-05-06 19:03:44.012 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 3
+2024-05-06 19:03:47.982 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 54
+2024-05-06 19:03:50.855 [Thread-0] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 53
+2024-05-06 19:04:20.044 [main] INFO  com._98labs.exercises.sockets.Server - Server connected
+2024-05-06 19:04:21.534 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
+2024-05-06 19:04:23.897 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 2
+2024-05-06 19:04:24.703 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 3
+2024-05-06 19:04:26.351 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 54
+2024-05-06 19:04:28.206 [Thread-1] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 53
+2024-05-06 19:04:53.790 [main] INFO  com._98labs.exercises.sockets.Server - Server connected
+2024-05-06 19:04:55.585 [Thread-2] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 1
+2024-05-06 19:04:58.358 [Thread-2] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 2
+2024-05-06 19:05:00.373 [Thread-2] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 3
+2024-05-06 19:05:02.336 [Thread-2] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 54
+2024-05-06 19:05:04.885 [Thread-2] INFO  com._98labs.exercises.sockets.ClientHandler - Received request from client: 53
+2024-05-06 19:06:56.454 [Thread-2] ERROR com._98labs.exercises.sockets.ClientHandler - Error handling client request: Connection reset
+2024-05-06 19:06:56.618 [Thread-1] ERROR com._98labs.exercises.sockets.ClientHandler - Error handling client request: Connection reset
+2024-05-06 19:06:56.786 [Thread-0] ERROR com._98labs.exercises.sockets.ClientHandler - Error handling client request: Connection reset
