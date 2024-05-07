@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d8a826b9-f521-4fee-98a5-c01338a0a9d1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/PoemFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/_98labs/exercises/sockets/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/_98labs/exercises/sockets/PoemFileReaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +65,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fix/update-6&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fix/update-7&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/resources&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Lenovo/IdeaProjects/ExerciseProject1/src/main/java/org/example/Main.java&quot;,
